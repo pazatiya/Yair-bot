@@ -678,7 +678,10 @@ async function startBot() {
       botSocket = null
       const code = new Boom(lastDisconnect?.error)?.output?.statusCode
       console.log('התנתק - קוד:', code)
-      if (code === DisconnectReason.loggedOut) setTimeout(startBot, 5000)
+      if (code === 401 || code === DisconnectReason.loggedOut) {
+  try { rmSync('auth_info', { recursive: true, force: true }) } catch {}
+  setTimeout(startBot, 3000)
+}
       else if (code === DisconnectReason.restartRequired) setTimeout(startBot, 1000)
       else setTimeout(startBot, 3000)
     }
