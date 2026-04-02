@@ -16,7 +16,7 @@ const supabase = createClient(
 if (process.env.DELETE_AUTH === 'true') {
   try { rmSync('auth_info', { recursive: true, force: true }); console.log('auth_info נמחק - ממתין ל-QR חדש') } catch {}
 }
-
+ 
 const OWNER_PHONE = '972507983306@s.whatsapp.net'
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY
 const MAX_PER_SLOT = 2
