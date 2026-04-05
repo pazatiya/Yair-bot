@@ -1300,7 +1300,7 @@ async function startBot() {
     logger,
     auth: { creds: state.creds, keys: makeCacheableSignalKeyStore(state.keys, logger) },
     printQRInTerminal: false,
-    browser: ['Ubuntu', 'Chrome', '20.0.04'],
+    browser: ['Jimmy', 'Safari', '1.0.0'],
     syncFullHistory: false,
     connectTimeoutMs: 60000,
     qrTimeout: 60000,
