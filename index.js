@@ -1372,7 +1372,7 @@ async function startBot() {
     logger,
     auth: state,
     printQRInTerminal: false,
-    browser: ['Jimmy-Bot', 'Safari', '605.1.15'],
+    browser: ['Jimmy-Bot', 'Chrome', '120.0.0'],
     syncFullHistory: false
   })
   botSocket = sock
