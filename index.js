@@ -1316,6 +1316,7 @@ async function startBot() {
   let remindersInterval = null, summaryScheduled = false, holidayCheckScheduled = false, yairRemindersInterval = null
 
   sock.ev.on('connection.update', async ({ connection, lastDisconnect, qr }) => {
+    console.log('🔍 connection update:', JSON.stringify({ connection, code: new Boom(lastDisconnect?.error)?.output?.statusCode, msg: lastDisconnect?.error?.message }))
     if (qr) { currentQR = qr; console.log('QR מוכן! כנסי ל-' + (process.env.RAILWAY_PUBLIC_DOMAIN || 'האתר') + ' לסריקה') }
     if (connection === 'open') {
       currentQR = null
