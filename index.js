@@ -1367,7 +1367,8 @@ async function startBot() {
         console.log('🔴 logged out — מוחק auth ומחכה לQR חדש')
         try { rmSync('auth_info', { recursive: true, force: true }) } catch {}
         try { await supabase.from('bot_auth').delete().eq('id', 'main') } catch {}
-        setTimeout(startBot, 10000)
+        console.log('יוצא מה-process — Railway יאתחל אוטומטית')
+setTimeout(() => process.exit(0), 2000)
       } else if (code === DisconnectReason.restartRequired) {
         setTimeout(startBot, 1000)
       } else {
