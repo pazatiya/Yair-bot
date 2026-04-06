@@ -1,7 +1,7 @@
 {
     "name": "yair-barber-bot",
     "version": "1.0.0",
-    "type": "module",
+    "type": "type": "commonjs",
     "main": "index.js",
     "scripts": {
       "start": "npm install && node index.js"
